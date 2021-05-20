@@ -1,0 +1,205 @@
+<!DOCTYPE html> <!--是html5标准网页声明,降低对浏览器的依赖性-->
+<html> <!--在它们之间是文档的头部和主体-->
+
+
+<head> <!--用于定义文档的头部，它是所有头部元素的容器。其中的元素可以引用脚本-->
+<style> /*风格*/
+body {margin:0;}/*定义文档的主体,清除掉浏览器默认的外边距*/
+
+/*无序 HTML 列表：*/
+ul {
+  list-style-type: none;/*样式*/
+  margin: 0;/*内边距*/
+  padding: 0;/*外边距*/
+  /*过长内容会被修剪，并且其余内容是不可见的。*/
+  //overflow: hidden;
+  background-color: #78dfed;
+  position: fixed;/*生成绝对定位的元素，相对于浏览器窗口进行定位。*/
+  top: 0;
+  width: 100%;//拉长标题
+}
+
+/*让单选消失*/
+li input[type="radio"] {
+		  position: absolute;/*绝对定位*/
+		  opacity: 0;
+		             	}
+						
+/*设置选中后的label属性*/
+	li input[type="radio"]:checked ~ label {
+     background: #6970ea;/*选中粉色*/
+     color: #ffff00;/*选中字体色白色*/
+     height: 50px;/*选中框高度*/
+     font-size: 1.5em;/*选中框变大*/
+	}
+
+
+
+li {
+  float: left; /*标题栏靠左*/
+}
+
+li label {
+  display: block;
+  color: white;
+  width: 110px;/*每个tab拉伸*/
+  height: 40px;
+  text-align: center;
+  padding: 40px 16px;
+  text-decoration: none;
+
+}
+
+
+/*设置选中后的section属性*/
+			li input[type="radio"]:checked ~ .section {
+			  opacity:1;/*选中内容框透明度*/
+			  /*选中内容框宽度width: 100%;*/
+			  width:93%;
+			  padding: 50px;
+			  color: #010404;/*选中内容框黑色*/
+			  text-indent: 2em;/*首行缩进*/
+			}
+			
+		
+li label:hover {
+				  height: 40px;
+				  border-color: #aa5500;/*选中的边框颜色*/
+				  color: #ff0000;/*选择的时候的tab文字颜色*/
+				}
+				li .section {
+				  opacity: 0;/*不透明级别*/
+				  position: absolute;
+				  height: 550px;
+				   /*选中内容框宽度width: 100%;*/
+				   width: 93%;
+				  left: 0;
+				  border: 1px solid #feffbc;
+				  background: rgba(255, 246, 176, 0.1);
+				  transition: all 200ms ease-in-out;
+				}
+				
+
+/*二级标题首行缩进*/				
+h2{
+	text-indent: 4em;
+}
+
+h3{
+	text-indent: 1em;
+}
+
+
+/*动画*/
+dh {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<ul>
+
+  <li>
+	  <input type="radio" name="tab" id="#home" checked>
+	  <label for="#home" class="active">龚雪主页</label>
+	  <div  class="section"  style="overflow-y:auto; background:url(1.jpg); background-size: 1600px 800px; background-repeat: no-repeat;">
+	     <h1>班级：计科11801班</h1>
+	     <h1>学号：1814270209</h1>
+	     <h1>姓名：龚雪</h1>
+		 <p style="display:none;">可以隐藏内容</p>
+		 <p style="display:none;">可以隐藏内容</p>
+		 <p style="display:none;">可以隐藏内容</p>
+		 <p style="display:none;">可以隐藏内容</p>
+		 <p style="display:none;">可以隐藏内容</p>
+
+
+	  </div>
+  </li>
+	  
+  <li>
+	  <input type="radio" name="tab" id="#news" >
+	  <label for="#news">作业题目</label>
+	  <div class="section">
+	     <h1>完成一个包含许多功能融合的网页制作。</h1>
+		 
+
+		<dh >
+					 <p>
+					  <img src="3.jpg" width="128" height="128" />
+					  </p>
+					  
+					  <h3>请勿盗用--by龚雪</h3>
+					  ！！！！！！！！！！！！
+					  
+		</dh>
+
+		 
+
+		 
+		 
+	  </div>
+  </li>
+  
+  <li>
+	    <input type="radio" name="tab" id="#contact" >
+		<label for="#contact">功能介绍</label>
+		<div class="section" style="overflow:auto;">
+		  <h1>1、CSS初级教程-添加超链接</h1>
+		  <h1>2、CSS中级教程-水平导航栏</h1> 
+		      <h2>   单选框页面切换</h2>
+			  <h2>   选中标题汉字变大</h2>
+		  <h1>3、CSS中级教程-opacity 属性指定元素的不透明度/透明度</h1>
+		  <h1>4、CSS中级教程-CSS布局-position属性</h1>
+		      <h2>    absolute; 的元素相对于最近的定位祖先元素进行定位</h2>
+		  <h1>5、CSS高级教程-背景图像</h1> 
+		      <h2>   背景尺寸调节</h2>
+		  <h1>6、CSS高级教程-CSS 过渡</h1>
+			  <h2>   在每个页面切换时选用ease-in-out - 规定开始和结束较慢的过渡效果</h2>
+		  <h1>7、CSS高级教程-CSS 动画</h1>
+			  <h2>   在动画效果效果</h2>
+		  <p>以上就是本次作业实现的全部功能！</p>
+
+
+		</div>
+  </li>
+	  
+	  
+  <li>
+	   <input type="radio" name="tab" id="#about" >
+	   <label for="#about">更多</label>
+	   <div class="section" >
+		   <h1><b><a href="https://www.w3school.com.cn/" target="_blank">点击链接前往w3school学习更多相关知识</a></b></h1>
+		   <h1><b><a href="https://www.baidu.com/" target="_blank">点击链接前往百多搜索更多相关知识</a></b></h1>
+	   </div>
+	
+  </li>
+	  
+
+
+</ul>
+
+
+</body>
+</html>
